@@ -1,13 +1,7 @@
 # 21:35 ~ 21:53
 
-def to_dict(num):
-    data = {}
-    for i in range(1, num + 1):
-        data.update({i:0})
-    return data
-
 def solution(n, lost, reserve):
-    students = to_dict(n)
+    students = { i :0 for i in range(1,n+1) }
     
     for reserve_student in reserve:
         students[reserve_student] = students[reserve_student] + 1
