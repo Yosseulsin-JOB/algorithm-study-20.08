@@ -5,16 +5,16 @@ def solution(answers):
     winner = []
     max_score = 0
 
-    for i in range(len(students_pattern)):
+    for student_pattern in students_pattern:
         k = 0
         score = 0
 
-        for j in range(len(answers)):
+        for answer in answers:
 
-            if k == len(students_pattern[i]):
+            if k == len(student_pattern):
                 k = 0
 
-            if answers[j] == students_pattern[i][k]:
+            if answer == student_pattern[k]:
                 score = score + 1
 
             k = k + 1
