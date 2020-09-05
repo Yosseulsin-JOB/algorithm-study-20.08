@@ -12,21 +12,12 @@ def solution(n, lost, reserve):
 
     for i in range(n) : 
         if student_list[i] == -1 :
-            if i == 0 : #가장 앞사람인 경우 보다 앞사람이 존재하지 않음
-                if student_list[i + 1] == 1 :
-                    student_list[i + 1] = 0
-                    student_list[i] = 0
-            elif i == (n - 1) : #가장 뒷사람인 경우 보다 뒷사람이 존재하지 않음
-                if student_list[i - 1] == 1 :
-                    student_list[i - 1] = 0
-                    student_list[i] = 0
-            else :
-                if student_list[i - 1] == 1 :
-                    student_list[i - 1] = 0
-                    student_list[i] = 0
-                elif student_list[i + 1] == 1 :
-                    student_list[i + 1] = 0
-                    student_list[i] = 0
+            if i > 0 and student_list[i - 1] == 1 :
+                student_list[i - 1] = 0
+                student_list[i] = 0
+            elif  i < n - 1 and student_list[i + 1] == 1 : 
+                student_list[i + 1] = 0
+                student_list[i] = 0
     
 
     for i in student_list :
