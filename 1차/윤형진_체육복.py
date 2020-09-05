@@ -21,7 +21,7 @@ def solution(n, lost, reserve):
     
 
     for i in student_list :
-        if i == 0 or i == 1 :
+        if i >= 0 :
             answer = answer + 1
     
     return answer
